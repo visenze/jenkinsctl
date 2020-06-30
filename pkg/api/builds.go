@@ -4,26 +4,48 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"net/http"
 	"strconv"
 	"strings"
 
-	"github.com/emman27/jenkinsctl/pkg/builds"
 	"github.com/golang/glog"
+	"github.com/hongshibao/jenkinsctl/pkg/builds"
 	"github.com/pkg/errors"
 )
 
 // GetBuild retrieves a particular build of a job
 func (c *JenkinsClient) GetBuild(jobName string, buildID int) (*builds.Build, error) {
-	resp, err := c.Get(fmt.Sprintf("/job/%s/%d/api/json", jobName, buildID))
+	return c.getBuild(jobName, buildID)
+}
+
+// GetLastBuild retrieves the last build of a job
+func (c *JenkinsClient) GetLastBuild(jobName string) (*builds.Build, error) {
+	return c.getBuild(jobName, -1)
+}
+
+func (c *JenkinsClient) getBuild(jobName string, buildID int) (*builds.Build, error) {
+	var resp *http.Response
+	var err error
+	if buildID > 0 {
+		resp, err = c.Get(fmt.Sprintf("/job/%s/%d/api/json", jobName, buildID))
+	} else {
+		// Get last build
+		resp, err = c.Get(fmt.Sprintf("/job/%s/api/json", jobName))
+	}
+
 	if err != nil {
-		return nil, errors.Wrapf(err, "Could not get job %d for %s", buildID, jobName)
+		return nil, errors.Wrapf(err, "Could not get last build for %s", jobName)
 	}
 	content, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, errors.Wrapf(err, "Could not read response body")
 	}
 	var build = new(builds.Build)
-	json.Unmarshal(content, build)
+	err = json.Unmarshal(content, build)
+	if err != nil {
+		return nil, errors.Wrapf(err, "Unmarshal response data failed")
+	}
+
 	glog.Infof("Parsed response %v", build)
 	return build, nil
 }

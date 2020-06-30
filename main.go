@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/emman27/jenkinsctl/cmd"
+	"github.com/hongshibao/jenkinsctl/cmd"
 	"github.com/spf13/pflag"
 )
 

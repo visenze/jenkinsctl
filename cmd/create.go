@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/emman27/jenkinsctl/output"
-	"github.com/emman27/jenkinsctl/pkg/builds"
+	"github.com/hongshibao/jenkinsctl/output"
+	"github.com/hongshibao/jenkinsctl/pkg/builds"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )

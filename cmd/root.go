@@ -15,7 +15,7 @@
 package cmd
 
 import (
-	"github.com/emman27/jenkinsctl/pkg/api"
+	"github.com/hongshibao/jenkinsctl/pkg/api"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

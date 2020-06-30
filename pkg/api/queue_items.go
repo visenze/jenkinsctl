@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/emman27/jenkinsctl/pkg/queue"
+	"github.com/hongshibao/jenkinsctl/pkg/queue"
 	"github.com/pkg/errors"
 )
 
