@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/hongshibao/jenkinsctl/pkg/builds"
+	"github.com/visenze/jenkinsctl/pkg/builds"
 )
 
 // GetArtifacts returns an array of artifacts for a particular build

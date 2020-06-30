@@ -5,9 +5,9 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/hongshibao/jenkinsctl/output"
-	"github.com/hongshibao/jenkinsctl/pkg/builds"
 	"github.com/spf13/cobra"
+	"github.com/visenze/jenkinsctl/output"
+	"github.com/visenze/jenkinsctl/pkg/builds"
 )
 
 var getCmd = &cobra.Command{

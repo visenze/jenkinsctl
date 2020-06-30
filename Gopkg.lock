@@ -10,6 +10,14 @@
   version = "v1.1.1"
 
 [[projects]]
+  digest = "1:c64d7c916c49d7187cbe3e3f35892137fdc08324610a7e7f755255b76bc1c86f"
+  name = "github.com/emman27/jenkinsctl"
+  packages = ["pkg/builds"]
+  pruneopts = "UT"
+  revision = "dad6bc45fcd1d6c750d7c4e7f65f72ee0b607806"
+  version = "0.5.1"
+
+[[projects]]
   digest = "1:abeb38ade3f32a92943e5be54f55ed6d6e3b6602761d74b4aab4c9dd45c18abd"
   name = "github.com/fsnotify/fsnotify"
   packages = ["."]
@@ -193,6 +201,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/emman27/jenkinsctl/pkg/builds",
     "github.com/golang/glog",
     "github.com/hako/durafmt",
     "github.com/pkg/errors",

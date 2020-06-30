@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/hongshibao/jenkinsctl/pkg/queue"
 	"github.com/pkg/errors"
+	"github.com/visenze/jenkinsctl/pkg/queue"
 )
 
 // GetQueueItem retrieves a queue item

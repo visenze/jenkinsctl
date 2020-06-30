@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hongshibao/jenkinsctl/cmd"
 	"github.com/spf13/pflag"
+	"github.com/visenze/jenkinsctl/cmd"
 )
 
 func main() {

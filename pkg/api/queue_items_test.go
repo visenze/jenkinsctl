@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/emman27/jenkinsctl/pkg/queue"
 	"github.com/stretchr/testify/assert"
+	"github.com/visenze/jenkinsctl/pkg/queue"
 )
 
 func Test_GetQueueItem(t *testing.T) {

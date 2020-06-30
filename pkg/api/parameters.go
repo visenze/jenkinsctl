@@ -3,7 +3,7 @@ package api
 import (
 	"errors"
 
-	"github.com/hongshibao/jenkinsctl/pkg/builds"
+	"github.com/visenze/jenkinsctl/pkg/builds"
 )
 
 const parameterActionClass = "hudson.model.ParametersAction"

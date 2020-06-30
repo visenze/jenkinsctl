@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/golang/glog"
-	"github.com/hongshibao/jenkinsctl/pkg/builds"
 	"github.com/pkg/errors"
+	"github.com/visenze/jenkinsctl/pkg/builds"
 )
 
 // GetBuild retrieves a particular build of a job

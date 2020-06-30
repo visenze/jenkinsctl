@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/hongshibao/jenkinsctl/output"
-	"github.com/hongshibao/jenkinsctl/pkg/builds"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
+	"github.com/visenze/jenkinsctl/output"
+	"github.com/visenze/jenkinsctl/pkg/builds"
 )
 
 var createCmd = &cobra.Command{
