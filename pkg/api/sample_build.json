@@ -30,7 +30,7 @@
         {
           "_class": "hudson.model.BooleanParameterValue",
           "name": "USE_SOMETHING",
-          "value": false
+          "value": "false"
         },
         {
           "_class": "hudson.model.StringParameterValue",
