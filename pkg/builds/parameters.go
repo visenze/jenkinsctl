@@ -1,6 +1,9 @@
 package builds
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 // Possible Parameter Types
 const (
@@ -51,7 +54,7 @@ func (p *BuildParameters) Rows() [][]string {
 		result = append(result, []string{
 			param.Type(),
 			param.Name,
-			param.Value.(string),
+			fmt.Sprintf("%v", param.Value),
 		})
 	}
 	return result
