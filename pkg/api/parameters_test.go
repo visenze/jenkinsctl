@@ -3,8 +3,8 @@ package api
 import (
 	"testing"
 
-	"github.com/emman27/jenkinsctl/pkg/builds"
 	"github.com/stretchr/testify/assert"
+	"github.com/visenze/jenkinsctl/pkg/builds"
 )
 
 func Test_getParamsErrorIfNoParams(t *testing.T) {

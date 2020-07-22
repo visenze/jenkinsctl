@@ -1,6 +1,9 @@
 package builds
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 // Possible Parameter Types
 const (
@@ -26,9 +29,9 @@ func (p *BuildParameter) Type() string {
 
 // BuildParameter represents a hudson.model.*ParameterValue
 type BuildParameter struct {
-	Class string `json:"_class"`
-	Name  string `json:"name"`
-	Value string `json:"value"`
+	Class string      `json:"_class"`
+	Name  string      `json:"name"`
+	Value interface{} `json:"value"`
 }
 
 // BuildParameters is the printable array of Parameter
@@ -51,7 +54,7 @@ func (p *BuildParameters) Rows() [][]string {
 		result = append(result, []string{
 			param.Type(),
 			param.Name,
-			param.Value,
+			fmt.Sprintf("%v", param.Value),
 		})
 	}
 	return result
